@@ -19,16 +19,29 @@ public class StepManager : MonoBehaviour
         foreach (var ui in UIs)
         {
             ui.InitializeNew(Sets[stepIndex].Choices[choiceCount]);
-            ui.OnClicked += NextStep;
+            ui.OnClicked += EvaluateClick;
             choiceCount++;
         }
     }
-    public void NextStep()
+    private void EvaluateClick(bool isCorrect)
     {
-        foreach(var ui in UIs)
+        if (isCorrect)
         {
-            ui.OnClicked -= NextStep;
+            NextStep();
         }
+        else
+        {
+            Debug.LogWarning("A ROBOT!!!");
+        }
+
+        foreach (var ui in UIs)
+        {
+            ui.OnClicked -= EvaluateClick;
+        }
+    }
+
+    private void NextStep()
+    {
 
         stepIndex++;
         if (stepIndex >= Sets.Count)

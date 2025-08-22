@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class ChoiceUI : MonoBehaviour
 {
-    public event Action OnClicked;
+    public event Action<bool> OnClicked;
     [SerializeField] private Image image;
 
     public bool isCorrect { get; private set; }
@@ -16,7 +16,7 @@ public class ChoiceUI : MonoBehaviour
     private void Awake()
     {
         button = GetComponent<Button>();
-        button.onClick.AddListener(() => OnClicked?.Invoke());
+        button.onClick.AddListener(() => OnClicked?.Invoke(isCorrect));
         OnClicked += ResetButton;
     }
     private void OnDestroy()
@@ -29,7 +29,7 @@ public class ChoiceUI : MonoBehaviour
         image.sprite = choice.Sprite;
         isCorrect = choice.correctChoice;
     }
-    private void ResetButton()
+    private void ResetButton(bool isCorrect)
     {
         EventSystem.current.SetSelectedGameObject(null);
     }
