@@ -7,4 +7,5 @@ using UnityEngine;
 public class ChoiceSet : ScriptableObject
 {
     public List<ChoiceObject> Choices = new List<ChoiceObject>();
+    public string SetQuistion;
 }

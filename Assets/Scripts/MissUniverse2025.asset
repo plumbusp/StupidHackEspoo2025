@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0ddafcafd06f7dd4681dc39b11d92005, type: 3}
+  m_Name: MissUniverse2025
+  m_EditorClassIdentifier: 
+  Choices:
+  - correctChoice: 1
+    Sprite: {fileID: 21300000, guid: 5d579410e37a83d498cf8f4a02234be0, type: 3}
+  - correctChoice: 1
+    Sprite: {fileID: 21300000, guid: a6c26094a1647ce4aa15194e0944dbc9, type: 3}
+  - correctChoice: 0
+    Sprite: {fileID: 21300000, guid: 72b684a2aa4d4c94bae3b9b546c54894, type: 3}
+  SetQuistion: Who should be Miss Universe 2025?
